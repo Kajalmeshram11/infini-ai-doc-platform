@@ -50,7 +50,6 @@ google-ai-generativelanguage==0.4.0
 google-api-core==2.26.0
 google-auth==2.41.1
 google-generativeai==0.3.2
-<<<<<<< HEAD
 googleapis-common-protos==1.70.0
 gradio==5.5.0
 gradio_client==1.4.2
