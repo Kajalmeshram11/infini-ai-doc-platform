@@ -12,6 +12,37 @@ A full-stack web application that leverages AI to help users generate, refine, a
 - **Document Export**: Download finalized documents as .docx or .pptx files
 - **AI Template Suggestions**: Automatically generate document outlines or slide titles
 
+## 📸 Application Screenshots
+
+### 🔐 Login Page
+![Login Page](Screenshots/login.png)
+
+---
+
+### 📊 Dashboard
+![Dashboard](Screenshots/dashboard.png)
+
+---
+
+### 📝 Document Creator
+![Document Creator](Screenshots/doc_creator.png)
+
+---
+
+### ✏️ Editor
+![Editor](Screenshots/editor.png)
+
+---
+
+### ⚙️ Content Generation
+![Content Generation](Screenshots/generate.png)
+
+---
+
+### 🌙 Dark Mode
+![Dark Mode](Screenshots/dark_mode.png)
+
+
 ## 🏗️ Technology Stack
 
 ### Backend
