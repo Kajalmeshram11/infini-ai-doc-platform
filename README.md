@@ -39,8 +39,7 @@ A full-stack web application that leverages AI to help users generate, refine, a
 ### 1. Clone the Repository
 
 ```bash
-git clone <repository-url>
-cd docgen-platform
+git clone https://github.com/Kajalmeshram11/Infini-AI-Assisted-Document-Authoring-and-Generation-Platform
 ```
 
 ### 2. Backend Setup
@@ -115,14 +114,11 @@ The frontend will run on `http://localhost:3000`
 | SECRET_KEY | Secret key for JWT token generation | Yes |
 | GEMINI_API_KEY | Google Gemini API key for AI generation | Yes |
 
-### Frontend
-
-No environment variables required for development. For production, update the `API_BASE` URL.
 
 ## 🗂️ Project Structure
 
 ```
-docgen-platform/
+infini/
 ├── backend/
 │   ├── app.py                 # Main Flask application
 │   ├── requirements.txt       # Python dependencies
@@ -239,64 +235,13 @@ Users can refine content multiple times:
 # Delete the database and restart
 rm docgen.db
 python app.py
-```
-
-**Import errors**
-```bash
-# Reinstall dependencies
-pip install -r requirements.txt
-```
+````
 
 **Gemini API errors**
 - Verify your API key is correct
 - Check you have API quota remaining
 - Ensure you're using a valid API key from Google AI Studio
 
-### Frontend Issues
-
-**CORS errors**
-- Ensure Flask-CORS is installed: `pip install flask-cors`
-- Verify backend is running on port 5000
-
-**Build errors**
-```bash
-# Clear cache and reinstall
-rm -rf node_modules package-lock.json
-npm install
-```
-
-## 📦 Production Deployment
-
-### Backend
-
-1. Set strong SECRET_KEY in environment variables
-2. Use production WSGI server (gunicorn):
-```bash
-pip install gunicorn
-gunicorn app:app
-```
-
-3. Use PostgreSQL instead of SQLite for production
-4. Enable HTTPS
-5. Set proper CORS origins
-
-### Frontend
-
-1. Build the production bundle:
-```bash
-npm run build
-```
-
-2. Serve the build folder with nginx or similar
-3. Update API_BASE to production backend URL
-
-## 🔒 Security Considerations
-
-- JWT tokens expire after 30 days
-- Passwords are hashed using Werkzeug security
-- User data is isolated per account
-- API endpoints require authentication
-- Input validation on all endpoints
 
 ## 🧪 Testing
 
@@ -326,10 +271,8 @@ npm run build
 
 ### Refinement Prompts
 - "Make this more professional and formal"
-- "Simplify the language for a general audience"
 - "Add specific examples and case studies"
 - "Convert to bullet points"
-- "Expand with more details"
 - "Reduce to 150 words"
 
 ## 🤝 Contributing
@@ -339,10 +282,6 @@ npm run build
 3. Make your changes
 4. Test thoroughly
 5. Submit a pull request
-
-## 📄 License
-
-This project is provided as-is for evaluation purposes.
 
 ## 🆘 Support
 
@@ -356,4 +295,8 @@ For issues or questions:
 
 ---
 
-**Built with ❤️ using Flask, React, and Google Gemini AI**
+👩‍💻 Developed By
+
+Kajal Meshram
+B.Tech CSE | AI & Full Stack Developer
+📌 Project: Infinidoc – AI Assisted Document Platform
