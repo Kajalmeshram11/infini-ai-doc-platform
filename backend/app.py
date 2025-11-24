@@ -1,4 +1,3 @@
-# app.py
 from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 from werkzeug.security import generate_password_hash, check_password_hash
@@ -18,9 +17,19 @@ import io
 import traceback
 from flask import send_from_directory
 
+# CRITICAL FIX: Since app.py is in /backend, point to ../frontend/build
+BUILD_PATH = os.path.join(os.path.dirname(__file__), '..', 'frontend', 'build')
 
-app = Flask(__name__)
+app = Flask(__name__, static_folder=BUILD_PATH, static_url_path='')
 CORS(app)
+
+@app.route("/", defaults={"path": ""})
+@app.route("/<path:path>")
+def serve(path):
+    if path != "" and os.path.exists(os.path.join(app.static_folder, path)):
+        return send_from_directory(app.static_folder, path)
+    else:
+        return send_from_directory(app.static_folder, "index.html")
 
 app.config['SECRET_KEY'] = os.environ.get('SECRET_KEY', 'your-secret-key-change-in-production')
 app.config['DATABASE'] = os.environ.get('DATABASE_PATH', 'docgen.db')
@@ -698,19 +707,8 @@ def create_pptx(project, sections):
     return out
 
 
-app = Flask(__name__, static_folder='frontend/build', static_url_path='')
-
-@app.route("/", defaults={"path": ""})
-@app.route("/<path:path>")
-def serve(path):
-    if path != "" and os.path.exists(os.path.join(app.static_folder, path)):
-        return send_from_directory(app.static_folder, path)
-    else:
-        return send_from_directory(app.static_folder, "index.html")
-
 
 if __name__ == '__main__':
    
     init_db()
     app.run(debug=False, port=int(os.environ.get('PORT', 5000)))
-
