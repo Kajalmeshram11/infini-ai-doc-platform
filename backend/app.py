@@ -21,7 +21,12 @@ from flask import send_from_directory
 BUILD_PATH = os.path.join(os.path.dirname(__file__), '..', 'frontend', 'build')
 
 app = Flask(__name__, static_folder=BUILD_PATH, static_url_path='')
-CORS(app)
+
+CORS(app, resources={
+    r"/api/*": {
+        "origins": ["https://infini-ai-doc-platform.vercel.app"]
+    }
+})
 
 @app.route("/", defaults={"path": ""})
 @app.route("/<path:path>")

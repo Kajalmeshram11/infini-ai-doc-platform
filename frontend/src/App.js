@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FileText, Presentation, Plus, Edit, Download, ThumbsUp, ThumbsDown, Sparkles, Trash2, ArrowUp, ArrowDown, Save, LogOut, User, Moon, Sun } from 'lucide-react';
 import { Mail, Lock, Eye, EyeOff, ArrowRight } from 'lucide-react';
 
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = 'https://infini-ai-doc-platform-1.onrender.com/api';
 
 // Theme Toggle Component
 const ThemeToggle = ({ theme, setTheme }) => {
@@ -96,7 +96,7 @@ const AuthForm = ({ onLogin }) => {
           };
       
       const token = localStorage.getItem('token');
-      const response = await fetch(`http://localhost:5000/api${endpoint}`, {
+      const response = await fetch(`https://infini-ai-doc-platform-1.onrender.com/api${endpoint}`, {
         method: 'POST',
         headers: { 
           'Content-Type': 'application/json',

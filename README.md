@@ -15,37 +15,43 @@ A full-stack web application that leverages AI to help users generate, refine, a
 ## 📸 Application Screenshots
 
 ### 🔐 Login Page
+
 ![Login Page](Screenshots/login.png)
 
 ---
 
 ### 📊 Dashboard
+
 ![Dashboard](Screenshots/dashboard.png)
 
 ---
 
 ### 📝 Document Creator
+
 ![Document Creator](Screenshots/doc_creator.png)
 
 ---
 
 ### ⚙️ Content Generation
+
 ![Content Generation](Screenshots/generate.png)
 
 ---
 
 ### ✏️ Editor
+
 ![Editor](Screenshots/editor.png)
 
 ---
 
 ### 🌙 Dark Mode
-![Dark Mode](Screenshots/dark_mode.png)
 
+![Dark Mode](Screenshots/dark_mode.png)
 
 ## 🏗️ Technology Stack
 
 ### Backend
+
 - **Framework**: Flask (Python)
 - **Database**: SQLite
 - **AI Integration**: Google Gemini API
@@ -53,6 +59,7 @@ A full-stack web application that leverages AI to help users generate, refine, a
 - **Document Generation**: python-docx, python-pptx
 
 ### Frontend
+
 - **Framework**: React
 - **Styling**: Tailwind CSS
 - **Icons**: Lucide React
@@ -76,6 +83,7 @@ git clone https://github.com/Kajalmeshram11/Infini-AI-Assisted-Document-Authorin
 ### 2. Backend Setup
 
 #### Create a virtual environment
+
 ```bash
 cd backend
 python -m venv venv
@@ -88,17 +96,20 @@ source venv/bin/activate
 ```
 
 #### Install Python dependencies
+
 ```bash
 pip install flask flask-cors pyjwt werkzeug google-generativeai python-docx python-pptx
 ```
 
 #### Create a `.env` file in the backend directory
+
 ```bash
 SECRET_KEY=your-secret-key-here-change-in-production
 GEMINI_API_KEY=your-gemini-api-key-here
 ```
 
 #### Initialize the database
+
 The database will be automatically created when you run the application for the first time.
 
 ### 3. Frontend Setup
@@ -109,9 +120,11 @@ npm install
 ```
 
 #### Update API endpoint (if needed)
+
 If your backend runs on a different port, update the `API_BASE` constant in `src/App.jsx`:
+
 ```javascript
-const API_BASE = 'http://localhost:5000/api';
+const API_BASE = "https://infini-ai-doc-platform-1.onrender.com/api";
 ```
 
 ## 🎮 Running the Application
@@ -123,7 +136,7 @@ cd backend
 python app.py
 ```
 
-The backend will run on `http://localhost:5000`
+The backend will run on `https://infini-ai-doc-platform-1.onrender.com`
 
 ### Start the Frontend Development Server
 
@@ -140,11 +153,10 @@ The frontend will run on `http://localhost:3000`
 
 ### Backend (.env)
 
-| Variable | Description | Required |
-|----------|-------------|----------|
-| SECRET_KEY | Secret key for JWT token generation | Yes |
-| GEMINI_API_KEY | Google Gemini API key for AI generation | Yes |
-
+| Variable       | Description                             | Required |
+| -------------- | --------------------------------------- | -------- |
+| SECRET_KEY     | Secret key for JWT token generation     | Yes      |
+| GEMINI_API_KEY | Google Gemini API key for AI generation | Yes      |
 
 ## 🗂️ Project Structure
 
@@ -201,7 +213,6 @@ For each section, you can:
   - "Convert to bullet points"
   - "Shorten to 100 words"
   - "Add statistics and data"
-  
 - **Provide Feedback**: Click thumbs up/down to rate the content
 
 - **Add Comments**: Add notes or instructions for future reference
@@ -217,6 +228,7 @@ For each section, you can:
 ### AI Content Generation
 
 The system uses Google's Gemini AI to:
+
 - Generate contextual content for each section
 - Create appropriate content based on document type (detailed paragraphs for Word, bullet points for PowerPoint)
 - Maintain consistency with the overall topic
@@ -224,6 +236,7 @@ The system uses Google's Gemini AI to:
 ### Iterative Refinement
 
 Users can refine content multiple times:
+
 - Each refinement is stored in history
 - Previous versions are preserved
 - AI understands context from previous content
@@ -238,17 +251,18 @@ Users can refine content multiple times:
 ### Backend Issues
 
 **Database errors**
+
 ```bash
 # Delete the database and restart
 rm docgen.db
 python app.py
-````
+```
 
 **Gemini API errors**
+
 - Verify your API key is correct
 - Check you have API quota remaining
 - Ensure you're using a valid API key from Google AI Studio
-
 
 ## 🧪 Testing
 
@@ -271,12 +285,14 @@ python app.py
 ## 📝 Sample Prompts for Testing
 
 ### Document Topics
+
 - "Market analysis of electric vehicles in 2025"
 - "Business proposal for sustainable fashion startup"
 - "Technical documentation for REST API"
 - "Marketing strategy for mobile app launch"
 
 ### Refinement Prompts
+
 - "Make this more professional and formal"
 - "Add specific examples and case studies"
 - "Convert to bullet points"
@@ -293,12 +309,11 @@ python app.py
 ## 🆘 Support
 
 For issues or questions:
+
 1. Check the troubleshooting section
 2. Review API documentation
 3. Check Gemini AI documentation
 4. Create an issue in the repository
-
-
 
 ---
 
